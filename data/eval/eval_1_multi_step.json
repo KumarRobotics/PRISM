@@ -1,0 +1,120 @@
+{
+  "graph": {
+    "objects":
+    [
+        {"name": "sail_boat_1", "coords": [7, 7], "description": "not damaged"},
+        {"name": "pickup_truck_1", "coords": [-8.8, -20], "description": "has keys"},
+        {"name": "cabin_1", "coords": [-45, -33], "description": ""},
+        {"name": "internet_tower_2", "coords": [75, -21], "description": "damaged"},
+        {"name": "cabin_2", "coords": [81, -35], "description": ""},
+        {"name": "light_pole_1", "coords": [87, -61], "description": ""},
+        {"name": "shed_1", "coords": [87, -61], "description": ""}
+    ],
+    "regions": [
+        {"name": "field_1", "coords": [0, 0], "description": ""},
+        {"name": "field_2", "coords": [2.5, 4.7], "description": ""},
+        {"name": "field_3", "coords": [-15, -5.5], "description": ""},
+        {"name": "field_4", "coords": [-13, -14.4], "description": ""},
+        {"name": "field_5", "coords": [6.5, -17], "description": ""},
+        {"name": "field_6", "coords": [13.7, -29], "description": ""},
+        {"name": "field_7", "coords": [44.8, -44.3], "description": ""},
+        {"name": "field_8", "coords": [70, -47], "description": ""},
+        {"name": "field_9", "coords": [82, -54], "description": ""},
+        {"name": "field_10", "coords": [104, -66], "description": ""},
+        {"name": "field_11", "coords": [123, -76], "description": ""},
+        {"name": "field_12", "coords": [141, -83], "description": ""},
+        {"name": "bridge_1", "coords": [154, -86], "description": "not damaged"},
+        {"name": "field_13", "coords": [177, -92], "description": ""},
+        {"name": "field_14", "coords": [199, -93], "description": ""},
+        {"name": "field_15", "coords": [210, -92], "description": ""},
+        {"name": "road_1", "coords": [213, -120], "description": ""},
+        {"name": "field_17", "coords": [196, -121], "description": ""},
+        {"name": "road_2", "coords": [211, -137], "description": ""}
+    ],
+    "object_connections": [
+        ["pickup_truck_1", "field_6"],
+        ["cabin_1", "field_6"],
+        ["sail_boat_1", "field_7"],
+        ["cabin_2", "field_8"],
+        ["internet_tower_2", "field_9"],
+        ["light_pole_1", "field_9"],
+        ["shed_1", "field_13"]
+    ],
+    "region_connections":[
+        ["field_2", "field_5"],
+        ["field_1", "field_2"],
+        ["field_2", "field_3"],
+        ["field_3", "field_4"],
+        ["field_4", "field_5"],
+        ["field_5", "field_1"],
+        ["field_5", "field_6"],
+        ["field_6", "field_7"],
+        ["field_7", "field_8"],
+        ["field_8", "field_9"],
+        ["field_9", "field_10"],
+        ["field_10", "field_11"],
+        ["field_11", "field_12"],
+        ["field_12", "bridge_1"],
+        ["bridge_1", "field_13"],
+        ["field_13", "field_14"],
+        ["field_14", "field_15"],
+        ["field_15", "road_1"],
+        ["road_1", "field_17"],
+        ["road_1", "road_2"]
+    ],
+    "robot_location": "field_1"
+  },
+
+"tasks": [
+    {
+      "task": "is there a boat in the scene?",
+      "answer": "yes|boat|sailboat",
+      "init_node": "field_1"
+    },
+    {
+      "task": "Find me something I can drive in",
+      "answer": "truck",
+      "init_node": "field_1"
+    },
+    {
+      "task": "I lost my keys. I last saw them when I parked my truck.",
+      "answer": "truck",
+      "init_node": "field_1"
+    },
+    {
+      "task": "communications are down. Why?",
+      "answer": "internet|damaged",
+      "init_node": "field_1"
+    },
+    {
+      "task": "Is the light poles damaged?",
+      "answer": "no|i did not find|not|unable",
+      "init_node": "field_1"
+    },
+    {
+      "task": "Is the truck damaged?",
+      "answer": "no|i did not find|not|unable",
+      "init_node": "field_1"
+    },
+    {
+      "task": "Is the boat damaged?",
+      "answer": "no",
+      "init_node": "field_1"
+    },
+    {
+      "task": "Find me a place to stay for the night?",
+      "answer": "cabin",
+      "init_node": "field_1"
+    },
+    {
+      "task": "Where are tools likely to be?",
+      "answer": "shed",
+      "init_node": "field_1"
+    },
+    {
+      "task": "Can I cross the bridge?",
+      "answer": "yes|i did not find|not",
+      "init_node": "field_1"
+    }
+  ]
+}

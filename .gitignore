@@ -1,0 +1,17 @@
+notebooks/*
+unsloth_compiled_cache/
+ipynb*
+*__pycache__*
+*egg-info*
+scripts/outputs
+scripts/unsloth_compiled_cache
+scripts/data
+scripts/trained_models
+scripts
+*json
+models/*
+outputs/*
+wandb/*
+data/*
+*txt
+*sh
