@@ -10,7 +10,7 @@ Clone this repo, install requirements, and install
 ```
 git clone git@github.com:KumarRobotics/PRISM.git && cd PRISM
 python -m pip install -r requirements.txt
-python -m pip install -e setup.py
+python -m pip install -e .
 ```
 
 
